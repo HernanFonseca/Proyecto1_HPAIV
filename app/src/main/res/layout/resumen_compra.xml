@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="175dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_cafe" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:text="Información de pedido"
+        android:textAlignment="center"
+        android:textColor="#E30909"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/listaResumen"
+        android:layout_width="330dp"
+        android:layout_height="183dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Monto total:"
+        android:textColor="#E30909"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaResumen" />
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E30909"
+        android:text="Confirmar "
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Fecha del pedido"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/editTextTime2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime2" />
+
+    <EditText
+        android:id="@+id/editTextTime2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Hora del pedido"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
