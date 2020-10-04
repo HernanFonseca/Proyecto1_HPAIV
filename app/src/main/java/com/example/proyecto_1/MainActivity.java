@@ -79,11 +79,11 @@ public class MainActivity extends AppCompatActivity {
         normalLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (etUser.getText().toString().contentEquals("HFonseca") && etPswd.getText().toString().contentEquals("FonckH3rn@n")) {
+                if (!etUser.getText().toString().contentEquals("") && !etPswd.getText().toString().contentEquals("")) {
                     Intent myIntent = new Intent(view.getContext(), TipoPedido.class);
                     startActivity(myIntent);
                 } else {
-                    Toast.makeText(getApplicationContext(), etPswd.getText().toString(),
+                    Toast.makeText(getApplicationContext(), "Acceso negado",
                             Toast.LENGTH_SHORT)
                             .show();
                 }
