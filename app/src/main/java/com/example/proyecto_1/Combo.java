@@ -6,6 +6,17 @@ public class Combo {
     private String Detalle;
     private int Imagen;
     private float Rating;
+    private boolean ordered;
+
+    public boolean isOrdered() {
+        return ordered;
+    }
+
+    public void setOrdered(boolean ordered) {
+        this.ordered = ordered;
+    }
+
+
     //usar alt + Insert para generar los métodos AQUÍ
     public Combo(int id, String nombre, String detalle, float rating, int imagen) {
         Id = id;
@@ -13,6 +24,7 @@ public class Combo {
         Detalle = detalle;
         Imagen = imagen;
         Rating = rating;
+        ordered=false;
     }
     public int getId() {
         return Id;

@@ -3,6 +3,7 @@ package com.example.proyecto_1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -33,6 +34,14 @@ public class MenuCombo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), Resumen.class);
                 startActivityForResult(myIntent, 0);
+            }
+        });
+
+        //Seleccionar un combo
+        menuCombo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                menu.get(i).setOrdered(true);
             }
         });
     }

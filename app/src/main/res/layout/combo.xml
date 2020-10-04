@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txttitulo"
+                android:id="@+id/txtTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -40,11 +40,17 @@
                 android:stepSize="0.5" />
 
             <TextView
-                android:id="@+id/txtcontenido"
+                android:id="@+id/txtContenido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="Detalles"
                 android:text="contenido" />
+
+            <CheckBox
+                android:id="@+id/cbAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar" />
 
         </LinearLayout>
 
