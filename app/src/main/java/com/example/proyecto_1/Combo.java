@@ -5,13 +5,13 @@ import android.os.Parcelable;
 
 import java.net.IDN;
 
-public class Combo implements Parcelable {
+public class Combo{
     private int Id;
     private String Nombre;
     private String Detalle;
     private int Imagen;
     private float Rating;
-    private boolean ordered;
+    public boolean ordered;
 
     public boolean isOrdered() {
         return ordered;
@@ -58,16 +58,5 @@ public class Combo implements Parcelable {
 
     public float getRating() {
         return Rating;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(Id);
-        parcel.writeBoolean(ordered);
     }
 }
