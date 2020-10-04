@@ -1,5 +1,6 @@
 package com.example.proyecto_1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,7 @@ public class Resumen extends AppCompatActivity {
         setContentView(R.layout.resumen_compra);
         listaCompras =findViewById(R.id.listaResumen);
         btnSiguiente =findViewById(R.id.btnConfirmar);
-        // TODO
+        Lista = (ArrayList<Combo>) getIntent().getExtra("compras");
         // Averiguar cómo conseguir la información seleccionada en la página anterior
 
         //Evento de click del boton

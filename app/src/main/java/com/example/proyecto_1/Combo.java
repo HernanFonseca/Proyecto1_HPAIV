@@ -1,6 +1,11 @@
 package com.example.proyecto_1;
 
-public class Combo {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.net.IDN;
+
+public class Combo implements Parcelable {
     private int Id;
     private String Nombre;
     private String Detalle;
@@ -53,5 +58,16 @@ public class Combo {
 
     public float getRating() {
         return Rating;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(Id);
+        parcel.writeBoolean(ordered);
     }
 }
