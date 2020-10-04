@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class MenuCombo extends AppCompatActivity {
     private ListView menuCombo;
-    ArrayList<Combo> menu;
+    ArrayList<Combo> menu, compras;
     Button btnSiguiente;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class MenuCombo extends AppCompatActivity {
         setContentView(R.layout.menu_combo);
         menuCombo=findViewById(R.id.listaCombos);
         btnSiguiente=findViewById(R.id.btnSiguiente);
+        compras=new ArrayList<Combo>();
         menu=new ArrayList<Combo>();
         menu.add(new Combo(1, "Cool","Coolness and spice",4, R.drawable.combo_1));
         menu.add(new Combo(2, "Very Cool","Coolness and spice",5, R.drawable.combo_1));
@@ -32,8 +33,14 @@ public class MenuCombo extends AppCompatActivity {
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                for (Combo item:menu) {
+                    if (item.isOrdered()){
+                        compras.add(item);
+                    }
+                }
                 Intent myIntent = new Intent(view.getContext(), Resumen.class);
-                startActivityForResult(myIntent, 0);
+                myIntent.putExtra("compras",compras);
+                startActivity(myIntent);
             }
         });
 
