@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!etUser.getText().toString().contentEquals("") && !etPswd.getText().toString().contentEquals("")) {
                     Intent myIntent = new Intent(view.getContext(), TipoPedido.class);
+                    myIntent.putExtra("user",etUser.getText().toString());
                     startActivity(myIntent);
                 } else {
                     Toast.makeText(getApplicationContext(), "Acceso negado",
