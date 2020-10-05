@@ -25,10 +25,10 @@ public class MenuCombo extends AppCompatActivity {
         btnSiguiente=findViewById(R.id.btnSiguiente);
         compras=new ArrayList<Combo>();
         menu=new ArrayList<Combo>();
-        menu.add(new Combo(1, "Hamburgueson","Hamburguesa de doble carne con queso americano y bacon, acompañado de papas y una cerveza",4, R.drawable.combo1));
-        menu.add(new Combo(2, "Pizza delicia","Pizza para una persona con pimenton, cebolla morada, hongos y peperoni, acompañado de una cerveza",5, R.drawable.combo2));
-        menu.add(new Combo(3, "Team Hotdog","2 hotdogs con salsas, papas trituradas y bacon, acompañado de 2 cervezas",(float)2.5, R.drawable.combo3));
-        menu.add(new Combo(4, "Combo amigos","3 hotdogs con pepinillo, guacamoles y papas trituradas, acompañado de 3 cervezas",3, R.drawable.comboamigos));
+        menu.add(new Combo(1, "Hamburgueson","Hamburguesa de doble carne con queso americano y bacon, acompañado de papas y una cerveza",15,4, R.drawable.combo1));
+        menu.add(new Combo(2, "Pizza delicia","Pizza para una persona con pimenton, cebolla morada, hongos y peperoni, acompañado de una cerveza",16, 4, R.drawable.combo2));
+        menu.add(new Combo(3, "Team Hotdog","2 hotdogs con salsas, papas trituradas y bacon, acompañado de 2 cervezas",18,(float)2.5, R.drawable.combo3));
+        menu.add(new Combo(4, "Combo amigos","3 hotdogs con pepinillo, guacamoles y papas trituradas, acompañado de 3 cervezas",25,3, R.drawable.comboamigos));
         Adaptador adapter = new Adaptador(this, menu);
         menuCombo.setAdapter(adapter);
         //Evento de click del boton

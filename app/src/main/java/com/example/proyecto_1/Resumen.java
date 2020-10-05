@@ -23,16 +23,12 @@ public class Resumen extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resumen_compra);
-        listaCompras =findViewById(R.id.listaResumen);
+        //listaCompras =findViewById(R.id.listaResumen);
         btnSiguiente =findViewById(R.id.btnConfirmar);
         lista=getIntent().getStringExtra("compras");
         // Averiguar cómo conseguir la información seleccionada en la página anterior
         //Evento de click del boton
-        Gson gson = new Gson();
-        Type type = new TypeToken<ArrayList<Combo>>(){}.getType();
-        ArrayList<Combo> factura = gson.fromJson(lista, type);
-        Adaptador adapter = new Adaptador(this, factura);
-        listaCompras.setAdapter(adapter);
+
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

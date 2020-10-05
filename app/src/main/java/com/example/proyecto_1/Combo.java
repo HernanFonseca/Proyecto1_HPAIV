@@ -13,6 +13,15 @@ public class Combo implements Parcelable {
     private float Rating;
     private boolean ordered;
 
+    public float getPrecio() {
+        return Precio;
+    }
+    public void setPrecio(float precio) {
+        Precio = precio;
+    }
+
+    private float Precio;
+
     public boolean isOrdered() {
         return ordered;
     }
@@ -23,13 +32,14 @@ public class Combo implements Parcelable {
 
 
     //usar alt + Insert para generar los métodos AQUÍ
-    public Combo(int id, String nombre, String detalle, float rating, int imagen) {
+    public Combo(int id, String nombre, String detalle,float precio, float rating, int imagen) {
         Id = id;
         Nombre = nombre;
         Detalle = detalle;
         Imagen = imagen;
         Rating = rating;
         ordered=false;
+        Precio=precio;
     }
     public int getId() {
         return Id;
