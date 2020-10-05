@@ -56,7 +56,7 @@
         android:id="@+id/tvNumeroPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="123456"
+        android:text="749817"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="sans"
