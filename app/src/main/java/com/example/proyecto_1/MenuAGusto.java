@@ -25,6 +25,8 @@ public class MenuAGusto extends AppCompatActivity {
         principal=(float)0.0;
         acompa=(float)0.0;
         bebida=(float)0.0;
+
+        final String user = getIntent().getStringExtra("user");
         //Spinners
         spnPrincipal = findViewById(R.id.spnPrincipal);
         spnAcom= findViewById(R.id.spnAcom);
@@ -115,6 +117,7 @@ public class MenuAGusto extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), Resumen.class);
                 myIntent.putExtra("total", total);
+                myIntent.putExtra("user", user);
                 startActivity(myIntent);
             }
         });

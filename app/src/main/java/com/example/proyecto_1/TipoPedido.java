@@ -17,17 +17,23 @@ public class TipoPedido extends AppCompatActivity {
         final RadioButton rdbCombo=findViewById(R.id.rdbCombo);
         final RadioButton rdbAGusto=findViewById(R.id.rdbAGusto);
         Button btnSiguiente=findViewById(R.id.btnSiguiente);
+        final String user = getIntent().getStringExtra("user");
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (rdbCombo.isChecked()){
                     Intent myIntent = new Intent(view.getContext(), MenuCombo.class);
+                    myIntent.putExtra("user",user);
                     startActivity(myIntent);
                 }else if (rdbAGusto.isChecked()){
+                    Toast.makeText(getApplicationContext(), user,
+                            Toast.LENGTH_SHORT)
+                            .show();
                     Intent myIntent = new Intent(view.getContext(), MenuAGusto.class);
+                    myIntent.putExtra("user",user);
                     startActivity(myIntent);
                 }else{
-                    Toast.makeText(getApplicationContext(), "F en el chat",
+                    Toast.makeText(getApplicationContext(), "Seleccione una opción antes de continuar",
                             Toast.LENGTH_SHORT)
                             .show();
                 }

@@ -1,6 +1,5 @@
 package com.example.proyecto_1;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,18 +7,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
-import java.util.Calendar;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
+
 import java.util.Date;
 
 public class Resumen extends AppCompatActivity {
     private ListView listaCompras;
     String lista;
     Button btnSiguiente;
-    private TextView fecha, monto;
+    private TextView fecha, monto, tvUser;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +26,9 @@ public class Resumen extends AppCompatActivity {
         btnSiguiente =findViewById(R.id.btnConfirmar);
         lista=getIntent().getStringExtra("compras");
         fecha=findViewById(R.id.txtFecha);
-
+        tvUser = findViewById(R.id.txtusuario);
+        String user=getIntent().getStringExtra("user");
+        tvUser.setText(user);
         monto=findViewById(R.id.txtmonto);
         monto.setText(monto.getText().toString()+getIntent().getFloatExtra("total",0));
 

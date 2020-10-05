@@ -22,12 +22,14 @@ public class MenuCombo extends AppCompatActivity {
         btnSiguiente=findViewById(R.id.btnSiguiente);
         menu=new ArrayList<Combo>();
         total=0;
-        menu.add(new Combo(1, "Hamburgueson","Hamburguesa de doble carne con queso americano y bacon, acompañado de papas y una cerveza",15,4, R.drawable.combo1));
-        menu.add(new Combo(2, "Pizza delicia","Pizza para una persona con pimenton, cebolla morada, hongos y peperoni, acompañado de una cerveza",16, 4, R.drawable.combo2));
-        menu.add(new Combo(3, "Team Hotdog","2 hotdogs con salsas, papas trituradas y bacon, acompañado de 2 cervezas",18,(float)2.5, R.drawable.combo3));
-        menu.add(new Combo(4, "Combo amigos","3 hotdogs con pepinillo, guacamoles y papas trituradas, acompañado de 3 cervezas",25,3, R.drawable.comboamigos));
+        menu.add(new Combo(1, "Hamburgueson","Hamburguesa de doble carne con queso y bacon, con papas y una cerveza",15,4, R.drawable.combo1));
+        menu.add(new Combo(2, "Pizza delicia","Pizza para una persona con pimenton, cebolla morada, hongos y peperoni y una cerveza",16, 4, R.drawable.combo2));
+        menu.add(new Combo(3, "Team Hotdog","2 hotdogs con salsas, papas trituradas y bacon, con 2 cervezas",18,(float)2.5, R.drawable.combo3));
+        menu.add(new Combo(4, "Combo amigos","3 hotdogs con pepinillo, guacamoles y papas, con 3 cervezas",25,3, R.drawable.comboamigos));
         Adaptador adapter = new Adaptador(this, menu);
         menuCombo.setAdapter(adapter);
+
+        final String user = getIntent().getStringExtra("user");
         //Evento de click del boton
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +41,7 @@ public class MenuCombo extends AppCompatActivity {
                 }
                 Intent myIntent = new Intent(view.getContext(), Resumen.class);
                 myIntent.putExtra("total",total);
+                myIntent.putExtra("user", user);
                 startActivity(myIntent);
 
             }
