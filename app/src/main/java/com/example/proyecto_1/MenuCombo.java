@@ -22,10 +22,10 @@ public class MenuCombo extends AppCompatActivity {
         btnSiguiente=findViewById(R.id.btnSiguiente);
         menu=new ArrayList<Combo>();
         total=0;
-        menu.add(new Combo(1, "Hamburgueson","Hamburguesa de doble carne con queso y bacon, con papas y una cerveza",15,4, R.drawable.combo1));
-        menu.add(new Combo(2, "Pizza delicia","Pizza para una persona con pimenton, cebolla morada, hongos y peperoni y una cerveza",16, 4, R.drawable.combo2));
-        menu.add(new Combo(3, "Team Hotdog","2 hotdogs con salsas, papas trituradas y bacon, con 2 cervezas",18,(float)2.5, R.drawable.combo3));
-        menu.add(new Combo(4, "Combo amigos","3 hotdogs con pepinillo, guacamoles y papas, con 3 cervezas",25,3, R.drawable.comboamigos));
+        menu.add(new Combo(1, "Hamburgueson","Doble carne con queso y bacon, con papas y  cerveza",15,4, R.drawable.combo1));
+        menu.add(new Combo(2, "Pizza delicia","Pimenton, cebolla morada, hongos y peperoni y cerveza",16, 4, R.drawable.combo2));
+        menu.add(new Combo(3, "Team Hotdog","2 HD con salsas, papas trituradas y bacon y 2 cervezas",18,(float)2.5, R.drawable.combo3));
+        menu.add(new Combo(4, "Combo amigos","3 HD con pepinillo, guacamoles y papas y 3 cervezas",25,3, R.drawable.comboamigos));
         Adaptador adapter = new Adaptador(this, menu);
         menuCombo.setAdapter(adapter);
 

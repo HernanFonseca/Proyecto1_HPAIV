@@ -49,8 +49,8 @@ public class MenuAGusto extends AppCompatActivity {
                     txtprecio1.setText("El precio es: B/.5.00");
                     principal=(float)5;
                 }else if (i==2){
-                    txtprecio1.setText("El precio es: B/.8.00");
-                    principal=(float)8;
+                    txtprecio1.setText("El precio es: B/.3.00");
+                    principal=(float)3;
                 }else if (i==3){
                     txtprecio1.setText("El precio es: B/.7.00");
                     principal=(float)7;

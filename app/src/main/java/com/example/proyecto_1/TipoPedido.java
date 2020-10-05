@@ -26,9 +26,6 @@ public class TipoPedido extends AppCompatActivity {
                     myIntent.putExtra("user",user);
                     startActivity(myIntent);
                 }else if (rdbAGusto.isChecked()){
-                    Toast.makeText(getApplicationContext(), user,
-                            Toast.LENGTH_SHORT)
-                            .show();
                     Intent myIntent = new Intent(view.getContext(), MenuAGusto.class);
                     myIntent.putExtra("user",user);
                     startActivity(myIntent);

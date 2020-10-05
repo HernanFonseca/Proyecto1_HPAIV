@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class Adaptador extends BaseAdapter {
         return 0;
     }
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View vista = convertView;
         LayoutInflater inflate = LayoutInflater.from(contexto); vista= inflate.inflate(R.layout.combo, null);
 
@@ -40,15 +41,21 @@ public class Adaptador extends BaseAdapter {
         TextView titulo=(TextView)vista.findViewById(R.id.txtTitulo);
         TextView detalle =(TextView)vista.findViewById(R.id.txtContenido);
 
-        titulo.setText(ListaObjetos.get(position).getNombre().toString());
+        titulo.setText(ListaObjetos.get(position).getNombre());
         detalle.setText(ListaObjetos.get(position).getDetalle());
         imagen.setImageResource(ListaObjetos.get(position).getImagen());
 
         RatingBar ratingBar = vista.findViewById(R.id.ratingBar);
         ratingBar.setRating(ListaObjetos.get(position).getRating());
 
-        CheckBox ordered = vista.findViewById(R.id.cbAdd);
+        final CheckBox ordered = vista.findViewById(R.id.cbAdd);
         ordered.setChecked(ListaObjetos.get(position).isOrdered());
+        ordered.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                ListaObjetos.get(position).setOrdered(b);
+            }
+        });
         return vista;
     }
 }
