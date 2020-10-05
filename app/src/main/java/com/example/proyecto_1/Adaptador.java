@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -34,14 +35,20 @@ public class Adaptador extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vista = convertView;
         LayoutInflater inflate = LayoutInflater.from(contexto); vista= inflate.inflate(R.layout.combo, null);
+
         ImageView imagen =(ImageView)vista.findViewById(R.id.img1);
-        TextView titulo=(TextView)vista.findViewById(R.id.txttitulo);
-        TextView detalle =(TextView)vista.findViewById(R.id.txtcontenido);
+        TextView titulo=(TextView)vista.findViewById(R.id.txtTitulo);
+        TextView detalle =(TextView)vista.findViewById(R.id.txtContenido);
+
         titulo.setText(ListaObjetos.get(position).getNombre().toString());
         detalle.setText(ListaObjetos.get(position).getDetalle());
         imagen.setImageResource(ListaObjetos.get(position).getImagen());
+
         RatingBar ratingBar = vista.findViewById(R.id.ratingBar);
         ratingBar.setRating(ListaObjetos.get(position).getRating());
+
+        CheckBox ordered = vista.findViewById(R.id.cbAdd);
+        ordered.setChecked(ListaObjetos.get(position).isOrdered());
         return vista;
     }
 }

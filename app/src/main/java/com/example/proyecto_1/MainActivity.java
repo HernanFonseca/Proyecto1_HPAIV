@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,11 +18,14 @@ public class MainActivity extends AppCompatActivity {
     private Executor executor;
     private BiometricPrompt biometricPrompt;
     private BiometricPrompt.PromptInfo promptInfo;
+    private EditText etUser, etPswd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        etPswd=findViewById(R.id.etPwd);
+        etUser=findViewById(R.id.etUsr);
         executor = ContextCompat.getMainExecutor(this);
         biometricPrompt = new BiometricPrompt(MainActivity.this,
                 executor, new BiometricPrompt.AuthenticationCallback() {
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onAuthenticationSucceeded(result);
                 Toast.makeText(getApplicationContext(),
                         "Ta cool!", Toast.LENGTH_SHORT).show();
-                //MainActivity.getContext().startActivity(new Intent(getApplicationContext(), TipoPedido.class));
+                startActivity(new Intent(getApplicationContext(), TipoPedido.class));
             }
 
             @Override
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Authentication failed",
                         Toast.LENGTH_SHORT)
                         .show();
+
             }
         });
 
@@ -66,14 +71,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 biometricPrompt.authenticate(promptInfo);
+
+                //startActivity(new Intent(view.getContext(), TipoPedido.class));
             }
         } );
         Button normalLogin = findViewById(R.id.btnLogin);
         normalLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), TipoPedido.class);
-                startActivity(myIntent);
+                if (!etUser.getText().toString().contentEquals("") && !etPswd.getText().toString().contentEquals("")) {
+                    Intent myIntent = new Intent(view.getContext(), TipoPedido.class);
+                    myIntent.putExtra("user",etUser.getText().toString());
+                    startActivity(myIntent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Acceso negado",
+                            Toast.LENGTH_SHORT)
+                            .show();
+                }
             }
         });
     }
