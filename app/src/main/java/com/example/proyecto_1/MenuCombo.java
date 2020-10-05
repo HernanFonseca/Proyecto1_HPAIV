@@ -6,16 +6,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
 
 public class MenuCombo extends AppCompatActivity {
     private ListView menuCombo;
-    ArrayList<Combo> menu, compras;
+    ArrayList<Combo> menu;
+    private float total;
     Button btnSiguiente;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,8 +20,8 @@ public class MenuCombo extends AppCompatActivity {
         setContentView(R.layout.menu_combo);
         menuCombo=findViewById(R.id.listaCombos);
         btnSiguiente=findViewById(R.id.btnSiguiente);
-        compras=new ArrayList<Combo>();
         menu=new ArrayList<Combo>();
+        total=0;
         menu.add(new Combo(1, "Hamburgueson","Hamburguesa de doble carne con queso americano y bacon, acompañado de papas y una cerveza",15,4, R.drawable.combo1));
         menu.add(new Combo(2, "Pizza delicia","Pizza para una persona con pimenton, cebolla morada, hongos y peperoni, acompañado de una cerveza",16, 4, R.drawable.combo2));
         menu.add(new Combo(3, "Team Hotdog","2 hotdogs con salsas, papas trituradas y bacon, acompañado de 2 cervezas",18,(float)2.5, R.drawable.combo3));
@@ -37,13 +34,11 @@ public class MenuCombo extends AppCompatActivity {
             public void onClick(View view) {
                 for (Combo item:menu) {
                     if (item.isOrdered()){
-                        compras.add(item);
+                        total+=item.getPrecio();
                     }
                 }
-                Gson gson=new Gson();
-                String factura=gson.toJson(compras);
                 Intent myIntent = new Intent(view.getContext(), Resumen.class);
-                myIntent.putExtra("compras",factura);
+                myIntent.putExtra("total",total);
                 startActivity(myIntent);
 
             }

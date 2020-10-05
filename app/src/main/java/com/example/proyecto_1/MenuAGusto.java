@@ -44,13 +44,13 @@ public class MenuAGusto extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==1){
-                    txtprecio1.setText("El precio es: 5" );
+                    txtprecio1.setText("El precio es: B/.5.00");
                     principal=(float)5;
                 }else if (i==2){
-                    txtprecio1.setText("El precio es:8" );
+                    txtprecio1.setText("El precio es: B/.8.00");
                     principal=(float)8;
                 }else if (i==3){
-                    txtprecio1.setText("El precio es:7" );
+                    txtprecio1.setText("El precio es: B/.7.00");
                     principal=(float)7;
                 }
                 total=principal+bebida+acompa;
@@ -68,13 +68,13 @@ public class MenuAGusto extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==1){
-                    txtprecio2.setText("El precio es: 2" );
+                    txtprecio2.setText("El precio es: B/.2.00" );
                     acompa=(float)2;
                 }else if (i==2){
-                    txtprecio2.setText("El precio es:3" );
+                    txtprecio2.setText("El precio es: B/.3.00" );
                     acompa=(float)3;
                 }else if (i==3){
-                    txtprecio2.setText("El precio es:2,5" );
+                    txtprecio2.setText("El precio es: B/.2.50" );
                     acompa=(float)2.5;
                 }
                 total=principal+bebida+acompa;
@@ -92,13 +92,13 @@ public class MenuAGusto extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==1){
-                    txtprecio3.setText("El precio es: 1,5" );
+                    txtprecio3.setText("El precio es: B/.1.50" );
                     bebida=(float)1.5;
                 }else if (i==2){
-                    txtprecio3.setText("El precio es:2" );
+                    txtprecio3.setText("El precio es: B/.2.00" );
                     bebida=(float)2;
                 }else if (i==3){
-                    txtprecio3.setText("El precio es:1" );
+                    txtprecio3.setText("El precio es: B/.1.00" );
                     bebida=(float)1;
                 }
                 total=principal+bebida+acompa;
@@ -114,6 +114,7 @@ public class MenuAGusto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), Resumen.class);
+                myIntent.putExtra("total", total);
                 startActivity(myIntent);
             }
         });

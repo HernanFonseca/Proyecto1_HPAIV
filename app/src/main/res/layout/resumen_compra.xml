@@ -53,34 +53,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        app:layout_constraintVertical_bias="0.138" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Fecha del pedido"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="@+id/editTextTime2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTime2" />
-
-    <EditText
-        android:id="@+id/editTextTime2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:ems="10"
-        android:hint="Hora del pedido"
-        android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtmonto" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHora"
+        app:layout_constraintVertical_bias="0.187" />
 
     <TextView
         android:id="@+id/txtusuario"
@@ -88,5 +64,23 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="255dp"
         tools:layout_editor_absoluteY="140dp" />
+
+    <TextView
+        android:id="@+id/txtFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtmonto"
+        app:layout_constraintTop_toBottomOf="@+id/txtmonto" />
+
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtFecha"
+        app:layout_constraintTop_toBottomOf="@+id/txtFecha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-
+import android.widget.TextView;
+import java.util.Calendar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
@@ -19,6 +16,7 @@ public class Resumen extends AppCompatActivity {
     private ListView listaCompras;
     String lista;
     Button btnSiguiente;
+    private TextView fecha, hora;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +24,12 @@ public class Resumen extends AppCompatActivity {
         //listaCompras =findViewById(R.id.listaResumen);
         btnSiguiente =findViewById(R.id.btnConfirmar);
         lista=getIntent().getStringExtra("compras");
+        fecha=findViewById(R.id.txtFecha);
+        hora=findViewById(R.id.txtHora);
         // Averiguar cómo conseguir la información seleccionada en la página anterior
         //Evento de click del boton
-
+        fecha.setText(Calendar.getInstance().DATE);
+        hora.setText(Calendar.getInstance().HOUR_OF_DAY);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
